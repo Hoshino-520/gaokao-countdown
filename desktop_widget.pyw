@@ -99,7 +99,6 @@ class CountdownWidget:
         screen_width = self.root.winfo_screenwidth()
         x = max(12, screen_width - WINDOW_WIDTH - 24)
         self.root.geometry(f"{WINDOW_WIDTH}x{WINDOW_HEIGHT}+{x}+60")
-        self.root.lower()
 
         self.menu = tk.Menu(self.root, tearoff=0)
         self.menu.add_command(label="退出倒计时", command=self.root.destroy)
@@ -155,6 +154,9 @@ class CountdownWidget:
             fill=ACCENT,
             font=("Microsoft YaHei UI", 11, "bold"),
         )
+
+        self.root.update()
+        self.root.lower()
 
         self.canvas.bind("<ButtonPress-1>", self.on_press)
         self.canvas.bind("<B1-Motion>", self.on_drag)
