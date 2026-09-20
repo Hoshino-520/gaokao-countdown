@@ -75,7 +75,6 @@ class CountdownWidget:
         self.root = tk.Tk()
         self.root.title(self.config["title"])
         self.root.overrideredirect(True)
-        self.root.attributes("-topmost", True)
         self.transparent = False
         try:
             self.root.attributes("-transparentcolor", TRANSPARENT_COLOR)
@@ -100,6 +99,7 @@ class CountdownWidget:
         screen_width = self.root.winfo_screenwidth()
         x = max(12, screen_width - WINDOW_WIDTH - 24)
         self.root.geometry(f"{WINDOW_WIDTH}x{WINDOW_HEIGHT}+{x}+60")
+        self.root.lower()
 
         self.menu = tk.Menu(self.root, tearoff=0)
         self.menu.add_command(label="退出倒计时", command=self.root.destroy)
@@ -161,6 +161,7 @@ class CountdownWidget:
         self.canvas.bind("<Button-3>", self.show_menu)
         self.root.bind("<Button-3>", self.show_menu)
         self.root.bind("<Escape>", lambda _event: self.root.destroy())
+        self.root.bind("<FocusOut>", lambda _event: self.root.lower())
 
         self.tick()
         self.root.mainloop()
