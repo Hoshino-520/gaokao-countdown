@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>高考倒计时</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="app-header">
+        <div class="title-block">
+          <p class="eyebrow">距下一场开考</p>
+          <h1 id="appTitle">2027 高考倒计时</h1>
+        </div>
+        <button id="settingsButton" class="icon-button" type="button" title="设置考试时间" aria-label="设置考试时间">
+          &#x2699;&#xFE0E;
+        </button>
+      </header>
+
+      <section class="timer-panel" aria-label="剩余时间">
+        <div class="timer-readout" aria-live="polite">
+          <div class="time-cell">
+            <span class="time-value" id="daysValue">0</span>
+            <span class="time-label">天</span>
+          </div>
+          <div class="time-cell">
+            <span class="time-value" id="hoursValue">00</span>
+            <span class="time-label">小时</span>
+          </div>
+          <div class="time-cell">
+            <span class="time-value" id="minutesValue">00</span>
+            <span class="time-label">分钟</span>
+          </div>
+          <div class="time-cell time-cell-accent">
+            <span class="time-value" id="secondsValue">00</span>
+            <span class="time-label">秒</span>
+          </div>
+        </div>
+
+        <div class="timer-footer">
+          <div class="target-block">
+            <span class="target-label">开考时间</span>
+            <span class="target-value" id="targetText">2027年6月7日 09:00</span>
+          </div>
+          <span class="countdown-mark" id="countdownMark">倒计时中</span>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <span id="nowText">今天</span>
+      </footer>
+    </main>
+
+    <div class="modal-backdrop" id="settingsModal" hidden>
+      <form class="settings-panel" id="settingsForm">
+        <div class="settings-head">
+          <h2>设置考试时间</h2>
+          <button id="cancelButton" class="icon-button" type="button" title="关闭" aria-label="关闭">&#x2715;</button>
+        </div>
+        <div class="field-row">
+          <label>
+            <span>年份</span>
+            <select id="yearSelect"></select>
+          </label>
+          <label>
+            <span>开考日期</span>
+            <input id="dateInput" type="date" value="2027-06-07">
+          </label>
+          <label>
+            <span>开考时间</span>
+            <input id="timeInput" type="time" step="1" value="00:00">
+          </label>
+        </div>
+        <div class="settings-actions">
+          <button type="submit" class="primary-button">保存</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
