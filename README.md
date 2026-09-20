@@ -2,6 +2,23 @@
 
 一个包含桌面悬浮倒计时和网页版的小项目，倒计时精确到秒。
 
+## 使用前需要什么
+
+- 网页版：不需要任何前置软件，用浏览器打开 `index.html` 即可。
+- 桌面版：需要 Windows 10/11，并安装 Python 3。安装时请勾选 `Add Python to PATH`；Tkinter 已包含在 Python 官方安装包里，不需要再安装其它库。
+
+## 下载方式
+
+在 GitHub 仓库页面点击 `Code` → `Download ZIP`，解压后整个文件夹一起使用。不要只下载单个文件，因为桌面版依赖 `config.json`、`desktop_widget.pyw` 和启动脚本等文件，它们需要放在同一个文件夹里。
+
+常用文件说明：
+
+- `启动桌面倒计时.bat`：打开桌面倒计时
+- `设置开机自启.vbs`：设置开机自启
+- `desktop_widget.pyw`：桌面倒计时本体
+- `config.json`：考试时间配置
+- `index.html` / `style.css` / `script.js`：网页版
+
 ## 运行截图
 
 ![运行截图](屏幕截图%202026-09-20%20163314.png)
